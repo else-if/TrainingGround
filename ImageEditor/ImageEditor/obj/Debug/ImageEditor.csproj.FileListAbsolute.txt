@@ -1,0 +1,9 @@
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe.config
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\bin\Debug\ImageEditor.exe
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\bin\Debug\ImageEditor.pdb
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csprojResolveAssemblyReference.cache
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\obj\Debug\ImageEditor.MainForm.resources
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\obj\Debug\ImageEditor.Properties.Resources.resources
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\obj\Debug\ImageEditor.csproj.GenerateResource.Cache
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\obj\Debug\ImageEditor.exe
+D:\work\C#\GitHub\TrainingGround\ImageEditor\ImageEditor\obj\Debug\ImageEditor.pdb
