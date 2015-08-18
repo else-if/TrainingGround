@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ImageEditor")]
+[assembly: AssemblyTitle("Gauss")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ImageEditor")]
+[assembly: AssemblyProduct("Gauss")]
 [assembly: AssemblyCopyright("Copyright ©  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b3c05158-4c13-4d5f-879d-bf2a1fe7dcf1")]
+[assembly: Guid("cd98a683-79bd-4527-90e2-b5e8ad7368ae")]
 
 // Version information for an assembly consists of the following four values:
 //
