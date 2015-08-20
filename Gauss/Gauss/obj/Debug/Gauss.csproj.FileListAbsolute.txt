@@ -7,3 +7,4 @@ D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\obj\Debug\Gauss.csproj.GenerateReso
 D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\obj\Debug\Gauss.exe
 D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\obj\Debug\Gauss.pdb
 D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\obj\Debug\Gauss.MainForm.resources
+D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\bin\Debug\GaussSolution.exe.config
