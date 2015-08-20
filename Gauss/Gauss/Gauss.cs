@@ -87,6 +87,16 @@ namespace GaussSolution
                 Steps.Add(new GaussStep(varCount, A, B));
             }
 
+            for (int i = varCount - 1; i >= 0; i--)
+            {
+                for (int j = i + 1; i < varCount - 1; i++)
+                    B[i] = B[i] - A[i, j] * X[j];
+
+                X[i] = B[i];
+
+                Steps.Add(new GaussStep(varCount, A, B));
+            }
+
         }
     }
 }
