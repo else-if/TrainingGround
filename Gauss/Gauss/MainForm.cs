@@ -102,12 +102,18 @@ namespace GaussSolution
 
             for (int i = 0; i < varCount; i++)
             {
-                B[i] = (double)this.BGrid[0, i].Value;
+                if (this.BGrid[0, i].Value == null) this.BGrid[0, i].Value = 0;
+                B[i] = Convert.ToDouble(this.BGrid[0, i].Value.ToString());
+
                 for (int j = 0; j < varCount; j++)
-                    A[i, j] = (double)this.AGrid[j, i].Value;
+                {
+                    if (this.AGrid[j, i].Value == null) this.AGrid[j, i].Value = 0;
+                    A[i, j] = Convert.ToDouble(this.AGrid[j, i].Value.ToString());
+                }
             }
 
             Engine = new Gauss(varCount, A, B);
+            Engine.Calculate();
         }
 
         private void randomValuesToolStripMenuItem_Click(object sender, EventArgs e)
