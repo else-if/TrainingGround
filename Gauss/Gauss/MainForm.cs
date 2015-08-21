@@ -13,6 +13,7 @@ namespace GaussSolution
     public partial class MainForm : Form
     {
         private Gauss Engine;
+        private int currentStepIndex = 0;
 
         public MainForm()
         {
@@ -96,6 +97,8 @@ namespace GaussSolution
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
+            currentStepIndex = 0;
+
             int varCount = (int)this.VariablesCount.Value;
             double[,] A = new double[varCount, varCount];
             double []B = new double[varCount];
@@ -115,13 +118,17 @@ namespace GaussSolution
             Engine = new Gauss(varCount, A, B);
             Engine.Calculate();
 
-            if (Engine.ErrMsg = "")
+            if (Engine.ErrMsg == "")
             {
+                for (int i = 0; i < varCount; i++)
+                {
+                    this.XGrid[0, i].Value = Engine.X[i];
+                    this.EGrid[0, i].Value = Engine.E[i];
+                }
             }
             else
             {
-                //Message msg = new Message();
-                //msg.Msg
+                MessageBox.Show("Система не может быть решена методом Гаусса");
             }
         }
 
@@ -139,6 +146,18 @@ namespace GaussSolution
                     this.AGrid[j, i].Value = Rnd.Next(-100, 100);
 
             }
+        }
+
+        private void PrevStep_Click(object sender, EventArgs e)
+        {
+            if ((currentStepIndex > 0) && (Engine.Steps.Count != 0))
+            {
+                currentStepIndex--;
+                GaussStep currentStep = Engine.Steps[currentStepIndex];
+
+                //for (int i = 0;i<)
+            }
+                
         }
     }
 }
