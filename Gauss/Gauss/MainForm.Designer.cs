@@ -60,6 +60,7 @@
             this.NextStep = new System.Windows.Forms.Button();
             this.buttonCalculate = new System.Windows.Forms.Button();
             this.labelAnalysis = new System.Windows.Forms.Label();
+            this.randomValuesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.VariablesCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AGrid)).BeginInit();
@@ -80,6 +81,8 @@
             // 
             // tESTToolStripMenuItem
             // 
+            this.tESTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.randomValuesToolStripMenuItem});
             this.tESTToolStripMenuItem.Name = "tESTToolStripMenuItem";
             this.tESTToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.tESTToolStripMenuItem.Text = "TEST";
@@ -350,6 +353,7 @@
             this.buttonCalculate.TabIndex = 16;
             this.buttonCalculate.Text = "Вычислить";
             this.buttonCalculate.UseVisualStyleBackColor = true;
+            this.buttonCalculate.Click += new System.EventHandler(this.buttonCalculate_Click);
             // 
             // labelAnalysis
             // 
@@ -359,6 +363,13 @@
             this.labelAnalysis.Size = new System.Drawing.Size(81, 13);
             this.labelAnalysis.TabIndex = 17;
             this.labelAnalysis.Text = "Анализ шагов:";
+            // 
+            // randomValuesToolStripMenuItem
+            // 
+            this.randomValuesToolStripMenuItem.Name = "randomValuesToolStripMenuItem";
+            this.randomValuesToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.randomValuesToolStripMenuItem.Text = "Random values";
+            this.randomValuesToolStripMenuItem.Click += new System.EventHandler(this.randomValuesToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -415,6 +426,7 @@
         private System.Windows.Forms.Button NextStep;
         private System.Windows.Forms.Button buttonCalculate;
         private System.Windows.Forms.Label labelAnalysis;
+        private System.Windows.Forms.ToolStripMenuItem randomValuesToolStripMenuItem;
     }
 }
 

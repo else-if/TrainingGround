@@ -12,6 +12,8 @@ namespace GaussSolution
 {
     public partial class MainForm : Form
     {
+        private Gauss Engine;
+
         public MainForm()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace GaussSolution
         }
         private void InitializeElements()
         {
-            int colWidth = 40;
+            int colWidth = 60;
             int rowHeight = 20;
 
             this.AGrid.ColumnCount = (int)VariablesCount.Value;
@@ -84,12 +86,44 @@ namespace GaussSolution
             this.PrevStep.Top = this.labelAnalysis.Top-3;
             this.NextStep.Top = this.labelAnalysis.Top-3;
 
-            this.Width = this.labelEGrid.Left + this.labelEGrid.Width + 18;
+            this.Width = this.EGrid.Left + this.EGrid.Width + 24;
             this.Height = this.NextStep.Top + this.NextStep.Height + this.MainMenu.Size.Height + 18;
         }
         private void VariablesCount_ValueChanged(object sender, EventArgs e)
         {
             InitializeElements();
+        }
+
+        private void buttonCalculate_Click(object sender, EventArgs e)
+        {
+            int varCount = (int)this.VariablesCount.Value;
+            double[,] A = new double[varCount, varCount];
+            double []B = new double[varCount];
+
+            for (int i = 0; i < varCount; i++)
+            {
+                B[i] = (double)this.BGrid[0, i].Value;
+                for (int j = 0; j < varCount; j++)
+                    A[i, j] = (double)this.AGrid[j, i].Value;
+            }
+
+            Engine = new Gauss(varCount, A, B);
+        }
+
+        private void randomValuesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int varCount = (int)this.VariablesCount.Value;
+
+            Random Rnd = new Random();
+
+            for (int i = 0; i < varCount; i++)
+            {
+                this.BGrid[0, i].Value = Rnd.Next(-100, 100);
+
+                for (int j = 0; j < varCount; j++)
+                    this.AGrid[j, i].Value = Rnd.Next(-100, 100);
+
+            }
         }
     }
 }

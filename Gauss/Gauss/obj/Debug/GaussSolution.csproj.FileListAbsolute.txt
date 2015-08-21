@@ -7,3 +7,12 @@ D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.csproj.Gene
 D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.exe
 D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.pdb
 D:\work\C#\GitHub\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.csprojResolveAssemblyReference.cache
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\bin\Debug\GaussSolution.exe.config
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.exe
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.pdb
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\bin\Debug\GaussSolution.exe
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\bin\Debug\GaussSolution.pdb
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.csprojResolveAssemblyReference.cache
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.MainForm.resources
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.Properties.Resources.resources
+D:\Шевченко\С#\git\TrainingGround\TrainingGround\Gauss\Gauss\obj\Debug\GaussSolution.csproj.GenerateResource.Cache
