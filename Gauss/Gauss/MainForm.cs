@@ -114,6 +114,15 @@ namespace GaussSolution
 
             Engine = new Gauss(varCount, A, B);
             Engine.Calculate();
+
+            if (Engine.ErrMsg = "")
+            {
+            }
+            else
+            {
+                //Message msg = new Message();
+                //msg.Msg
+            }
         }
 
         private void randomValuesToolStripMenuItem_Click(object sender, EventArgs e)
