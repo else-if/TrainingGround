@@ -129,26 +129,10 @@ namespace GaussSolution
             }
             else
             {
-                MessageBox.Show("Система не может быть решена методом Гаусса");
+                MessageBox.Show(Engine.ErrMsg);
             }
 
             SetStepText();
-        }
-
-        private void randomValuesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            int varCount = (int)this.VariablesCount.Value;
-
-            Random Rnd = new Random();
-
-            for (int i = 0; i < varCount; i++)
-            {
-                this.BGrid[0, i].Value = Rnd.Next(-100, 100);
-
-                for (int j = 0; j < varCount; j++)
-                    this.AGrid[j, i].Value = Rnd.Next(-100, 100);
-
-            }
         }
 
         private void PrevStep_Click(object sender, EventArgs e)
@@ -219,7 +203,64 @@ namespace GaussSolution
             {
                 e.Cancel = true;
                 this.BGrid[e.ColumnIndex, e.RowIndex].ErrorText = "В ячейке должно быть указано числовое значение";
+            }            
+        }
+
+        private void randomValuesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int varCount = (int)this.VariablesCount.Value;
+
+            Random Rnd = new Random();
+
+            for (int i = 0; i < varCount; i++)
+            {
+                this.BGrid[0, i].Value = Rnd.Next(-100, 100);
+
+                for (int j = 0; j < varCount; j++)
+                    this.AGrid[j, i].Value = Rnd.Next(-100, 100);
+
             }
         }
+        private void happyPathToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.VariablesCount.Value = 4;
+            InitializeElements();
+
+            double[,] A = { { -3, 4, 1, 4 }, { 0, 1, 3, 2 }, { 4, 0, -2, -3 }, { 1000, 3, 1, -5 } };
+            double[] B = { -1, -1, 4, -2 };
+
+            int varCount = (int)this.VariablesCount.Value;
+
+            for (int i = 0; i < varCount; i++)
+            {
+                this.BGrid[0, i].Value = B[i];
+
+                for (int j = 0; j < varCount; j++)
+                    this.AGrid[j, i].Value = A[i, j];
+
+            }
+
+        }
+        private void unhappyPathToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.VariablesCount.Value = 4;
+            InitializeElements();
+
+            double[,] A = { { -3, 4, 1, 4 }, { 0, 1, 3, 2 }, { 4, 0, -2, -3 }, { -6, 8, 2, 8 } };
+            double[] B = { -1, -1, 4, -2 };
+
+            int varCount = (int)this.VariablesCount.Value;
+
+            for (int i = 0; i < varCount; i++)
+            {
+                this.BGrid[0, i].Value = B[i];
+
+                for (int j = 0; j < varCount; j++)
+                    this.AGrid[j, i].Value = A[i, j];
+
+            }
+        }
+
+
     }
 }
