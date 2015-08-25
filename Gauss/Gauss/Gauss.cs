@@ -30,6 +30,10 @@ namespace GaussSolution
             Steps = new List<GaussStep>();
             Steps.Add(FirstStep);
 
+            Array.Clear(X, 0, X.Length);
+            Array.Clear(E, 0, X.Length);
+            ErrMsg = "";
+
             double [,]A = new double[varCount, varCount];
             double[] B = new double[varCount];
 
@@ -73,7 +77,6 @@ namespace GaussSolution
                 }
                 B[i] = B[i] / basicValue;
 
-
                 for (int j = i + 1; j < varCount; j++)
                 {
                     basicValue = A[j, i];
@@ -87,6 +90,9 @@ namespace GaussSolution
                 Steps.Add(new GaussStep(varCount, A, B));
             }
 
+            if (ErrMsg != "") return;
+
+            //обратный ход
             for (int i = varCount - 1; i >= 0; i--)
             {
                 for (int j = i + 1; j < varCount; j++)
@@ -95,9 +101,9 @@ namespace GaussSolution
                     A[i, j] = 0;
                 }
 
-                X[i] = B[i];
+                X[i] = B[i] / A[i, i];
 
-                Steps.Add(new GaussStep(varCount, A, B));
+                if (i < varCount-1) Steps.Add(new GaussStep(varCount, A, B));
             }
 
             //Вычислим вектор ошибок

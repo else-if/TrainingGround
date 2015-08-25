@@ -86,6 +86,7 @@ namespace GaussSolution
             this.labelAnalysis.Top = this.AGrid.Top + this.AGrid.Height + 10;
             this.PrevStep.Top = this.labelAnalysis.Top-3;
             this.NextStep.Top = this.labelAnalysis.Top-3;
+            this.labelStep.Top = this.labelAnalysis.Top;
 
             this.Width = this.EGrid.Left + this.EGrid.Width + 24;
             this.Height = this.NextStep.Top + this.NextStep.Height + this.MainMenu.Size.Height + 18;
@@ -130,6 +131,8 @@ namespace GaussSolution
             {
                 MessageBox.Show("Система не может быть решена методом Гаусса");
             }
+
+            SetStepText();
         }
 
         private void randomValuesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -150,14 +153,62 @@ namespace GaussSolution
 
         private void PrevStep_Click(object sender, EventArgs e)
         {
-            if ((currentStepIndex > 0) && (Engine.Steps.Count != 0))
+            int varCount = (int)this.VariablesCount.Value;
+
+            if ((Engine != null) && (currentStepIndex > 0) && (Engine.Steps.Count != 0))
             {
                 currentStepIndex--;
                 GaussStep currentStep = Engine.Steps[currentStepIndex];
 
-                //for (int i = 0;i<)
+                for (int i = 0; i < varCount; i++)
+                {
+                    this.BGrid[0, i].Value = currentStep.B[i];
+
+                    for (int j = 0; j < varCount; j++)
+                        this.AGrid[j, i].Value = currentStep.A[i, j];
+                }
             }
-                
+
+            SetStepText();
+
+        }
+        private void NextStep_Click(object sender, EventArgs e)
+        {
+            int varCount = (int)this.VariablesCount.Value;
+
+            if ((Engine != null) && (currentStepIndex < Engine.Steps.Count - 1))
+            {
+                currentStepIndex++;
+                GaussStep currentStep = Engine.Steps[currentStepIndex];
+
+                for (int i = 0; i < varCount; i++)
+                {
+                    this.BGrid[0, i].Value = currentStep.B[i];
+
+                    for (int j = 0; j < varCount; j++)
+                        this.AGrid[j, i].Value = currentStep.A[i, j];
+                }
+            }
+
+            SetStepText();
+        }
+
+        private void SetStepText()
+        {
+            if ((Engine == null) || (Engine.Steps.Count == 0)) labelStep.Text = "";
+            else labelStep.Text = (currentStepIndex + 1).ToString() + " / " + Engine.Steps.Count.ToString();
+        }
+
+        private void AGrid_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            this.AGrid[e.ColumnIndex, e.RowIndex].ErrorText = "";
+            double newDouble;
+
+            if (!Double.TryParse(e.FormattedValue.ToString(), out newDouble))
+            {
+                e.Cancel = true;
+                this.AGrid[e.ColumnIndex, e.RowIndex].ErrorText = "В ячейке должно быть указано числовое значение";
+            }
         }
     }
 }
