@@ -210,5 +210,16 @@ namespace GaussSolution
                 this.AGrid[e.ColumnIndex, e.RowIndex].ErrorText = "В ячейке должно быть указано числовое значение";
             }
         }
+        private void BGrid_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            this.BGrid[e.ColumnIndex, e.RowIndex].ErrorText = "";
+            double newDouble;
+
+            if (!Double.TryParse(e.FormattedValue.ToString(), out newDouble))
+            {
+                e.Cancel = true;
+                this.BGrid[e.ColumnIndex, e.RowIndex].ErrorText = "В ячейке должно быть указано числовое значение";
+            }
+        }
     }
 }

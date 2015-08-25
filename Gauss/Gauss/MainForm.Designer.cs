@@ -231,6 +231,7 @@
             this.BGrid.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.BGrid.Size = new System.Drawing.Size(64, 258);
             this.BGrid.TabIndex = 7;
+            this.BGrid.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.BGrid_CellValidating);
             // 
             // labelXGrid
             // 
